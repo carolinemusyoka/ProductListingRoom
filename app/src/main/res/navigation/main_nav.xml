@@ -9,7 +9,7 @@
     <fragment
         android:id="@+id/dashFragment"
         tools:layout="@layout/fragment_dash"
-        android:name="com.carolmusyoka.iprocureandroidtest.DashFragment"
+        android:name="com.carolmusyoka.iprocureandroidtest.ui.DashFragment"
         android:label="DashFragment" >
         <action
             android:id="@+id/action_dashFragment_to_addProductFragment"
@@ -19,13 +19,17 @@
     <fragment
         android:id="@+id/addProductFragment"
         tools:layout="@layout/fragment_add_product"
-        android:name="com.carolmusyoka.iprocureandroidtest.AddProductFragment"
-        android:label="AddProductFragment" />
+        android:name="com.carolmusyoka.iprocureandroidtest.ui.AddProductFragment"
+        android:label="AddProductFragment" >
+        <action
+            android:id="@+id/action_addProductFragment_to_dashFragment"
+            app:destination="@id/dashFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/inventoryFragment"
         tools:layout="@layout/fragment_inventory"
-        android:name="com.carolmusyoka.iprocureandroidtest.InventoryFragment"
+        android:name="com.carolmusyoka.iprocureandroidtest.ui.InventoryFragment"
         android:label="InventoryFragment" />
 
 </navigation>
