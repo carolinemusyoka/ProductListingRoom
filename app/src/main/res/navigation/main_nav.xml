@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav.xml"
+    app:startDestination="@id/dashFragment">
+
+
+    <fragment
+        android:id="@+id/dashFragment"
+        tools:layout="@layout/fragment_dash"
+        android:name="com.carolmusyoka.iprocureandroidtest.DashFragment"
+        android:label="DashFragment" >
+        <action
+            android:id="@+id/action_dashFragment_to_addProductFragment"
+            app:destination="@id/addProductFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addProductFragment"
+        tools:layout="@layout/fragment_add_product"
+        android:name="com.carolmusyoka.iprocureandroidtest.AddProductFragment"
+        android:label="AddProductFragment" />
+
+    <fragment
+        android:id="@+id/inventoryFragment"
+        tools:layout="@layout/fragment_inventory"
+        android:name="com.carolmusyoka.iprocureandroidtest.InventoryFragment"
+        android:label="InventoryFragment" />
+
+</navigation>
