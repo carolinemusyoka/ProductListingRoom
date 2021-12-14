@@ -1,8 +1,9 @@
-package com.carolmusyoka.iprocureandroidtest
+package com.carolmusyoka.iprocureandroidtest.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
+import com.carolmusyoka.iprocureandroidtest.R
 import com.carolmusyoka.iprocureandroidtest.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
