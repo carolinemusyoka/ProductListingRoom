@@ -6,13 +6,20 @@
         <entry key="..\:/Carol/projects/iProcureAndroidTest/app/src/main/res/drawable/bg_button.xml" value="0.13125" />
         <entry key="..\:/Carol/projects/iProcureAndroidTest/app/src/main/res/drawable/bg_button_white.xml" value="0.13125" />
         <entry key="..\:/Carol/projects/iProcureAndroidTest/app/src/main/res/drawable/bg_rounded.xml" value="0.2078125" />
+        <entry key="..\:/Carol/projects/iProcureAndroidTest/app/src/main/res/drawable/chip_outline.xml" value="0.1" />
+        <entry key="..\:/Carol/projects/iProcureAndroidTest/app/src/main/res/drawable/chip_outline_selected.xml" value="0.1" />
         <entry key="..\:/Carol/projects/iProcureAndroidTest/app/src/main/res/drawable/ic_drawer_search_small.xml" value="0.2078125" />
+        <entry key="..\:/Carol/projects/iProcureAndroidTest/app/src/main/res/drawable/selector_tab.xml" value="0.1" />
         <entry key="..\:/Carol/projects/iProcureAndroidTest/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Carol/projects/iProcureAndroidTest/app/src/main/res/layout/content_empty_state_layout.xml" value="0.18" />
         <entry key="..\:/Carol/projects/iProcureAndroidTest/app/src/main/res/layout/dropdown_item.xml" value="0.18" />
         <entry key="..\:/Carol/projects/iProcureAndroidTest/app/src/main/res/layout/fragment_add_product.xml" value="0.15" />
+        <entry key="..\:/Carol/projects/iProcureAndroidTest/app/src/main/res/layout/fragment_all.xml" value="0.12105263157894737" />
+        <entry key="..\:/Carol/projects/iProcureAndroidTest/app/src/main/res/layout/fragment_cereal_seeds.xml" value="0.1" />
         <entry key="..\:/Carol/projects/iProcureAndroidTest/app/src/main/res/layout/fragment_dash.xml" value="0.13" />
-        <entry key="..\:/Carol/projects/iProcureAndroidTest/app/src/main/res/layout/fragment_inventory.xml" value="0.22" />
+        <entry key="..\:/Carol/projects/iProcureAndroidTest/app/src/main/res/layout/fragment_equipment.xml" value="0.12105263157894737" />
+        <entry key="..\:/Carol/projects/iProcureAndroidTest/app/src/main/res/layout/fragment_inventory.xml" value="0.15" />
+        <entry key="..\:/Carol/projects/iProcureAndroidTest/app/src/main/res/layout/fragment_minerals.xml" value="0.12105263157894737" />
         <entry key="..\:/Carol/projects/iProcureAndroidTest/app/src/main/res/layout/fragment_sort_products.xml" value="0.1" />
         <entry key="..\:/Carol/projects/iProcureAndroidTest/app/src/main/res/layout/list_items.xml" value="0.2" />
         <entry key="..\:/Carol/projects/iProcureAndroidTest/app/src/main/res/menu/bottom_nav_menu.xml" value="0.12105263157894737" />

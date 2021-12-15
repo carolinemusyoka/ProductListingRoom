@@ -34,10 +34,10 @@ class AllProductsAdapter(var productItemList: List<Products>): RecyclerView.Adap
 
         holder.itemView.apply {
             binding.productName.text = item.productName
-            binding.productCode.text = item.productId.toString()
+            binding.productCode.text = "#" + item.productCode.toString()
             binding.productCategory.text = item.category
-            binding.productManufacturer.text = item.manufacturer
-            binding.unitCost.text = item.unitCost
+            binding.productManufacturer.text = item.manufacturer + " Manufacturers"
+            binding.unitCost.text = item.unitCost + "per unit"
             Glide.with(binding.imageView.context)
                 .asBitmap()
                 .placeholder(R.drawable.img)

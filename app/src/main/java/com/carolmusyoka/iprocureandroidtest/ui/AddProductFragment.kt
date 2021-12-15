@@ -110,7 +110,7 @@ class AddProductFragment : Fragment() {
 
         Log.d("TAG", "saveProduct: $image")
         val product = Products(
-            productId = 0,
+            productCode = productCode.toInt(),
             productName = productName,
             category = itemSelected!!,
             productType = "",

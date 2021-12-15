@@ -36,7 +36,7 @@
 
 
                     <TextView
-                        android:text="All Your Products"
+                        android:text="All Products"
                         android:textSize="35sp"
                         android:textStyle="bold"
                         android:textColor="@color/black"
