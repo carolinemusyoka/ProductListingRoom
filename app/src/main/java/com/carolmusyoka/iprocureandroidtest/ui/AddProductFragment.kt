@@ -15,7 +15,6 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
@@ -28,7 +27,6 @@ import com.carolmusyoka.iprocureandroidtest.data.model.Products
 import com.carolmusyoka.iprocureandroidtest.data.repository.ProductsRepository
 import com.carolmusyoka.iprocureandroidtest.data.viewmodel.ProductViewModel
 import com.carolmusyoka.iprocureandroidtest.data.viewmodel.ProductViewModelFactory
-
 import com.carolmusyoka.iprocureandroidtest.databinding.FragmentAddProductBinding
 import dev.ronnie.github.imagepicker.ImagePicker
 import dev.ronnie.github.imagepicker.ImageResult
@@ -46,6 +44,7 @@ class AddProductFragment : Fragment() {
     private var itemSelected : String? = null
     private var image: String? = null
     private var uriMain: Uri? = null
+    private var statusCheck: Boolean? = null
 
 
     override fun onCreateView(
@@ -65,6 +64,9 @@ class AddProductFragment : Fragment() {
         val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, categories)
         (binding.category.editText as? AutoCompleteTextView)?.setAdapter(arrayAdapter)
 
+        binding.vat.setOnCheckedChangeListener { _, isChecked ->
+            statusCheck = isChecked
+        }
         binding.autoTv.onItemClickListener =
             AdapterView.OnItemClickListener{ parent, arg1 , pos, id ->
                 itemSelected = arrayAdapter.getItem(pos)
@@ -116,7 +118,7 @@ class AddProductFragment : Fragment() {
             productType = "",
             manufacturer = manufacturer,
             distributer = distributer,
-            vat = true,
+            vat = statusCheck!!,
             unitCost = unitPrice,
             retailPrice = retailPrice,
             agentPrice = agentPrice,

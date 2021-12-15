@@ -45,7 +45,7 @@ class DashFragment : Fragment() {
         }
         binding.editSearch.setAdapter(adapter)
         binding.editSearch.doOnTextChanged { text, _, _, _ -> 
-          
+
         }
         binding.editSearch.setOnEditorActionListener { textView, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {

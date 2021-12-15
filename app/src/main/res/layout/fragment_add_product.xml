@@ -143,6 +143,14 @@
 
             <!--            view-->
 <!--            vat radiobutton-->
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/vat"
+                android:checked="true"
+                android:textColor="@android:color/background_dark"
+                android:paddingLeft="15dp"
+                android:text="Vat 16%"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/unitPrice"
