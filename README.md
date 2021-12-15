@@ -35,5 +35,12 @@ This is an application to enable a user to manage a product listing (in an e-com
 <img src="/images/9.png" width="20%"/>
 </p>
 
+
+
+
+https://user-images.githubusercontent.com/44951692/146120588-0d0a1fe2-fa7a-4228-9d17-9be90013f3fc.mp4
+
+
+
 ## WIP
 -  [ ] Tests (both UI and Unit)
