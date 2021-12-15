@@ -1,60 +1,47 @@
 package com.carolmusyoka.iprocureandroidtest.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.carolmusyoka.iprocureandroidtest.R
+import com.carolmusyoka.iprocureandroidtest.data.db.ProductsDatabase
+import com.carolmusyoka.iprocureandroidtest.data.model.Products
+import com.carolmusyoka.iprocureandroidtest.data.repository.ProductsRepository
+import com.carolmusyoka.iprocureandroidtest.data.viewmodel.ProductViewModel
+import com.carolmusyoka.iprocureandroidtest.data.viewmodel.ProductViewModelFactory
+import com.carolmusyoka.iprocureandroidtest.databinding.FragmentInventoryBinding
+import com.google.android.material.tabs.TabLayoutMediator
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [SortProductsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+val tabsArray = arrayOf("All", "Minerals", "Equipment", "Cereals")
 class InventoryFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var _binding: FragmentInventoryBinding
+    private val binding get() = _binding
+    private var listOfItems: List<Products> ? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        _binding = FragmentInventoryBinding.inflate(inflater, container, false)
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_inventory, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment SortProductsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            InventoryFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val adapter = ViewPagerAdapter(childFragmentManager, lifecycle)
+        binding.viewPager.adapter = adapter
+
+        TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
+            tab.text = tabsArray[position]
+        }.attach()
     }
 }

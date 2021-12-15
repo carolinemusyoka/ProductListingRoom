@@ -2,6 +2,7 @@ package com.carolmusyoka.iprocureandroidtest.data.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.carolmusyoka.iprocureandroidtest.data.model.Products
 import com.carolmusyoka.iprocureandroidtest.data.repository.ProductsRepository
@@ -29,5 +30,6 @@ class ProductViewModel (private val productsRepository: ProductsRepository) : Vi
     fun allProductItems() = productsRepository.allProductItems()
 
 
+    fun searchDatabase(searchQuery: String) = productsRepository.searchDatabase(searchQuery).asLiveData()
 
 }

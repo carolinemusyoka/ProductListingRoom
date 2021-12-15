@@ -1,14 +1,13 @@
 package com.carolmusyoka.iprocureandroidtest.data.model
 
-import android.graphics.Bitmap
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "product_items")
 data class Products(
-    @ColumnInfo(name = "productId")
-    var productId: Int = 0,
+    @ColumnInfo(name = "productCode")
+    var productCode: Int ,
 
     @ColumnInfo(name = "productName")
     var productName: String,

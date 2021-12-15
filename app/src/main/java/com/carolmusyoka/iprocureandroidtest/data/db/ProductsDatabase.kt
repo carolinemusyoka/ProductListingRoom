@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.carolmusyoka.iprocureandroidtest.data.model.Products
 
 
-@Database(entities = [Products::class], version = 1, exportSchema = false)
+@Database(entities = [Products::class], version = 2, exportSchema = false)
 abstract class ProductsDatabase : RoomDatabase() {
     abstract fun getProductsDao(): ProductsDao
 

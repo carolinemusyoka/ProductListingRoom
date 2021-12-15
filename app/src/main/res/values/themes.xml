@@ -39,6 +39,12 @@
         <item name="android:textColor">@android:color/black</item>
     </style>
 
+    <style name="ChipTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">@android:color/transparent</item>
+        <item name="tabBackground">@drawable/selector_tab</item>
+        <item name="tabSelectedTextColor">?android:textColorPrimary</item>
+    </style>
+
     <style name="checkable_chip" parent="Widget.MaterialComponents.Chip.Choice">
         <item name="android:checkable">true</item>
         <item name="android:textColor">@color/chip_colors_text</item>

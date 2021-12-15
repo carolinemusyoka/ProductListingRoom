@@ -38,6 +38,7 @@
                 android:layout_marginStart="10dp"
                 android:text="(8904) "
                 android:textSize="16sp"
+                android:textColor="#00d500"
                 app:layout_constraintStart_toEndOf="@+id/imageView"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,6 +49,7 @@
                 android:layout_marginEnd="10dp"
                 android:text="Mazda Mazda Mazda"
                 android:textSize="16sp"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -55,9 +57,10 @@
                 android:id="@+id/productCategory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
                 android:text="microbes"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 app:layout_constraintStart_toEndOf="@+id/imageView"
                 app:layout_constraintTop_toBottomOf="@+id/productCode" />
@@ -69,6 +72,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:text="XYZ Enterprise"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/imageView"
                 app:layout_constraintTop_toBottomOf="@+id/productCategory" />
 
@@ -79,6 +83,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="12dp"
                 android:text="1500 per Unit"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/imageView"
                 app:layout_constraintTop_toBottomOf="@+id/productManufacturer" />
 
@@ -89,6 +94,7 @@
                 android:layout_marginTop="74dp"
                 android:layout_marginEnd="10dp"
                 android:text="Restock @100"
+                android:textColor="@color/orange"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/productName" />
         </androidx.constraintlayout.widget.ConstraintLayout>

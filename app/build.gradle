@@ -69,6 +69,9 @@ dependencies {
     // Paging 3
     implementation "androidx.paging:paging-runtime-ktx:$paging_version"
 
+    //ViewPager 2
+    implementation "androidx.viewpager2:viewpager2:1.1.0-beta01"
+
     //LifeCycle
     implementation 'androidx.lifecycle:lifecycle-common:2.3.1'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
