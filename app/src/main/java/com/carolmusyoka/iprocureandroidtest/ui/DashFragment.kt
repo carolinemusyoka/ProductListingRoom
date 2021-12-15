@@ -1,11 +1,15 @@
 package com.carolmusyoka.iprocureandroidtest.ui
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import android.util.Log
 import android.view.*
 import android.view.inputmethod.EditorInfo
 import android.widget.ArrayAdapter
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -24,8 +28,6 @@ class DashFragment : Fragment() {
     private lateinit var productsAdapter: AllProductsAdapter
     private lateinit var productViewModel: ProductViewModel
 
-    val adapter by lazy { ArrayAdapter<String>(requireContext(), android.R.layout.simple_dropdown_item_1line) }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -43,23 +45,21 @@ class DashFragment : Fragment() {
             productViewModel = ViewModelProvider(requireActivity(), factory)
                 .get(ProductViewModel::class.java)
         }
-        binding.editSearch.setAdapter(adapter)
-        binding.editSearch.doOnTextChanged { text, _, _, _ -> 
+        binding.editSearch.addTextChangedListener(object: TextWatcher {
 
-        }
-        binding.editSearch.setOnEditorActionListener { textView, actionId, _ ->
-            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                // call an API to find your results
-                    productViewModel.searchDatabase(textView.text.toString()).observe(viewLifecycleOwner, {list ->
-                        list.let {
-                            productsAdapter.productItemList = it
-                        }
-                    })
-                return@setOnEditorActionListener true
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                searchProduct(binding.editSearch.text.toString())
+                Log.d("TAG", "onTextChanged: ${binding.editSearch.text.toString()}")
             }
 
-            false
-        }
+            override fun afterTextChanged(p0: Editable?) {
+
+
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+        })
 
 
         activity.let {
@@ -84,6 +84,20 @@ class DashFragment : Fragment() {
             }
 
         })
+    }
+
+    private fun searchProduct(title: String) {
+        var searchText = title
+        searchText = title
+
+        Log.d("TAG", "searchProduct: $searchText")
+        productViewModel.searchDatabase(searchText).observe(viewLifecycleOwner , {list ->
+
+            list.let {
+                productsAdapter.productItemList = it
+            }
+        })
+
     }
 
 }

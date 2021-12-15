@@ -145,7 +145,6 @@
 <!--            vat radiobutton-->
             <com.google.android.material.switchmaterial.SwitchMaterial
                 android:id="@+id/vat"
-                android:checked="true"
                 android:textColor="@android:color/background_dark"
                 android:paddingLeft="15dp"
                 android:text="Vat 16%"

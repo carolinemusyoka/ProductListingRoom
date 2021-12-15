@@ -65,7 +65,11 @@ class AddProductFragment : Fragment() {
         (binding.category.editText as? AutoCompleteTextView)?.setAdapter(arrayAdapter)
 
         binding.vat.setOnCheckedChangeListener { _, isChecked ->
-            statusCheck = isChecked
+            if (statusCheck == isChecked){
+                statusCheck = true
+            } else {
+                statusCheck = false
+            }
         }
         binding.autoTv.onItemClickListener =
             AdapterView.OnItemClickListener{ parent, arg1 , pos, id ->
