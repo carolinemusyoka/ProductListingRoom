@@ -52,34 +52,6 @@
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
-        <LinearLayout
-            android:id="@+id/layout_search"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/edit_search"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:background="@drawable/bg_rounded"
-                android:drawablePadding="8dp"
-                android:hint="Search for products"
-                android:paddingStart="10dp"
-                android:paddingTop="8dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="8dp"
-                android:textAlignment="center"
-                android:textSize="14sp"
-                app:drawableStartCompat="@drawable/ic_drawer_search_small" />
-
-        </LinearLayout>
-
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"
             style="@style/checkable_chip"

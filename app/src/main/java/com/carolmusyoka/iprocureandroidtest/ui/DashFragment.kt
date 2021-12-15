@@ -1,10 +1,11 @@
 package com.carolmusyoka.iprocureandroidtest.ui
 
 import android.os.Bundle
+import android.view.*
+import android.view.inputmethod.EditorInfo
+import android.widget.ArrayAdapter
+import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -23,6 +24,7 @@ class DashFragment : Fragment() {
     private lateinit var productsAdapter: AllProductsAdapter
     private lateinit var productViewModel: ProductViewModel
 
+    val adapter by lazy { ArrayAdapter<String>(requireContext(), android.R.layout.simple_dropdown_item_1line) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,6 +37,30 @@ class DashFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        activity.let {
+            val productsRepository = ProductsRepository(ProductsDatabase(requireContext()))
+            val factory = ProductViewModelFactory(productsRepository)
+            productViewModel = ViewModelProvider(requireActivity(), factory)
+                .get(ProductViewModel::class.java)
+        }
+        binding.editSearch.setAdapter(adapter)
+        binding.editSearch.doOnTextChanged { text, _, _, _ -> 
+          
+        }
+        binding.editSearch.setOnEditorActionListener { textView, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                // call an API to find your results
+                    productViewModel.searchDatabase(textView.text.toString()).observe(viewLifecycleOwner, {list ->
+                        list.let {
+                            productsAdapter.productItemList = it
+                        }
+                    })
+                return@setOnEditorActionListener true
+            }
+
+            false
+        }
+
 
         activity.let {
             val productsRepository = ProductsRepository(ProductsDatabase(requireContext()))
